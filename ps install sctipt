@@ -1,0 +1,16 @@
+# Set variables
+$zipUrl = "https://your-git-server.com/path/to/odt.zip"   # Replace with your actual zip URL
+$downloadPath = "$env:TEMP\odt.zip"
+$extractPath = "$env:TEMP\odt"
+
+# Download the zip
+Invoke-WebRequest -Uri $zipUrl -OutFile $downloadPath
+
+# Extract the zip
+Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
+
+# Run the Office Deployment Tool
+Start-Process -FilePath "$extractPath\setup.exe" -ArgumentList "/configure config.xml" -Wait
+
+# Clean up (optional)
+Remove-Item $downloadPath -Force
