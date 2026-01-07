@@ -1,7 +1,15 @@
 # Set variables
+
+
+# ORINGAL CODE ----
+# $zipUrl = "https://your-git-server.com/path/to/odt.zip"   # Replace with your actual zip URL
+# $downloadPath = "$env:TEMP\odt.zip"
+# $extractPath = "$env:TEMP\odt"
+
 $zipUrl = "https://your-git-server.com/path/to/odt.zip"   # Replace with your actual zip URL
 $downloadPath = "$env:TEMP\odt.zip"
 $extractPath = "$env:TEMP\odt"
+
 
 # Download the zip
 Invoke-WebRequest -Uri $zipUrl -OutFile $downloadPath
