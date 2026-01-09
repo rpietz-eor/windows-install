@@ -18,7 +18,7 @@ Invoke-WebRequest -Uri $zipUrl -OutFile $downloadPath
 Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
 
 # Run the Office Deployment Tool
-Start-Process -FilePath "$extractPath\setup.exe" -ArgumentList "/configure config.xml" -Wait
+Start-Process -FilePath "$extractPath\setup.exe" -ArgumentList "/configuration-Office365-x64.xml" -Wait
 
 # Clean up (optional)
 Remove-Item $downloadPath -Force
