@@ -9,11 +9,11 @@ $ErrorActionPreference = 'Stop'
 
 # ---------- Variables ----------
 $RepoOwner  = "rpietz-eor"
-$RepoName   = "windows-install"
+$RepoName   = "office-deployment"
 $Branch     = "main"
 
 $ODTFile    = "setup.exe"
-$ConfigFile = "o365eor.xml"
+$ConfigFile = "o365v2.xml"
 
 $BaseDir    = "$env:ProgramData\OfficeDeployment"
 $LogFile    = "$BaseDir\OfficeInstall.log"
