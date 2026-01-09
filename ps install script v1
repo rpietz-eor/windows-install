@@ -1,12 +1,13 @@
-# Set variables
+# first version - doesn't seem to work.
 
+# 
 
 # ORINGAL CODE ----
 # $zipUrl = "https://your-git-server.com/path/to/odt.zip"   # Replace with your actual zip URL
 # $downloadPath = "$env:TEMP\odt.zip"
 # $extractPath = "$env:TEMP\odt"
 
-$zipUrl = "https://github.com/rpietz-eor/windows-install/blob/53ad979e8714364539c19285b5b15e8876d1d6e6/eor-odt-v1.zip"   # Replace with your actual zip URL
+$zipUrl = "https://github.com/rpietz-eor/windows-install/blob/53ad979e8714364539c19285b5b15e8876d1d6e6/eor-odt-v1.zip"  
 $downloadPath = "$env:TEMP\eor-odt-v1.zip"
 $extractPath = "$env:TEMP\odt"
 
@@ -18,7 +19,7 @@ Invoke-WebRequest -Uri $zipUrl -OutFile $downloadPath
 Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
 
 # Run the Office Deployment Tool
-Start-Process -FilePath "$extractPath\setup.exe" -ArgumentList "/configuration-Office365-x64.xml" -Wait
+Start-Process -FilePath "$extractPath\setup.exe" -ArgumentList "/ODT-config-w-Word-Tmplt.xml" -Wait
 
 # Clean up (optional)
 Remove-Item $downloadPath -Force
